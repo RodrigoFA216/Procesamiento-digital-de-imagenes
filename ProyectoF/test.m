@@ -25,18 +25,18 @@ imshow(dit);
 
 dithered=repmat(dit,5);
 
-frames = zeros(filas,columnas,256);
-frames(:,:,1) = dithered;
+ti = zeros(filas,columnas,256);
+ti(:,:,1) = dithered;
 
 for f=2:256
     for y=1:filas
         for x=1:columnas
-           frames(y,x,f) = frames(filas,columnas,f-1);
+           ti(y,x,f) = ti(filas,columnas,f-1);
            if((y<=filas-1)&&(x<=columnas-1))
-            frames(y,x,f) = frames(y,x+1,f-1);
+            ti(y,x,f) = ti(y,x+1,f-1);
             
            end
-           frames(y,columnas,f) = frames(y,1,f-1);
+           ti(y,columnas,f) = ti(y,1,f-1);
            
         end
     end
@@ -47,7 +47,7 @@ imshow(dithered);
 
 figure;
 for f=1:256
-    imshow(frames(:,:,f));
+    imshow(ti(:,:,f));
     pause(0.02);
 end
     
