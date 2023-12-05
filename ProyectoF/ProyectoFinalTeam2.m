@@ -21,7 +21,7 @@ while opcion ~= 10
     
     % Solicitar al usuario que ingrese la opción
     opcion = input('Ingrese el número de la opción deseada: ');
-
+ 
     switch opcion
         case 1
             disp('Ejecutando Ejercicio 1');
