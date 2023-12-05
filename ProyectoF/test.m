@@ -21,6 +21,7 @@ title('Imagen con contraste reducido');
 dit = imread("Escudo.png");
 dit = mat2gray(dit);
 dit = imresize(dit,[(filas/5),(columnas/5)]);
+figure;
 imshow(dit);
 
 dithered=repmat(dit,5);
