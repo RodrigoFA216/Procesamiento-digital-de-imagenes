@@ -1,0 +1,16 @@
+imagen = imread('boats.bmp');
+img_size = size(imagen);
+Io_DFT = goertzel(double(imagen));
+Io_DFT2 = fft2(double(imagen));
+Io_DFT_vis = abs(Io_DFT);
+
+figure(1);
+subplot(2,2,1);
+imshow(uint8(Io_DFT_vis));
+title('Imagen goertzel');
+subplot(2,2,2);
+imshow(uint8(fftshift(Io_DFT_vis)));
+title('Imagen goertzel shift');
+subplot(2,2,3);
+imshow(uint8(abs(Io_DFT2)));
+title('Imagen fft2 shift');
