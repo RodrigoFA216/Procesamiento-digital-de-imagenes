@@ -11,7 +11,7 @@ img_contrast = a * img_gray + (1/2) - (a/2);
 
 figure();
 subplot(1,2,1);
-imshow(img_gray);
+imshow(img_gray);   
 title('Imagen en escala de grises');
 subplot(1,2,2);
 imshow(img_contrast);
