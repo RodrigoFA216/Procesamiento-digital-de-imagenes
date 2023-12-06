@@ -1,6 +1,4 @@
 % Tests
-% añadir las funciones necesarias
-addpath("lptoolbox\");
 
 
 %Carga de una imagen
@@ -8,8 +6,17 @@ img = imread("IMG.jpg");
 img_gray = rgb2gray(img);
 a = 0.4; % depende del contraste, la frecuencia espacial, y la orientación de el objetivo
 img_contrast = a * img_gray + (1/2) - (a/2);
-%división de frecuencias
-img_freq = lpdecn(double(img_contrast),'9/7', 7);
+% generación de los códigos temporales
+count = 0;
+[x,y] = size(img_contrast);
+while count <= 450
+    for i = 1 : x
+        for j = 1 : y
+            major = img_contrast(i,j) -0.5;
+            = img_contrast(i,j) -0.5;
+        end
+    end
+end
 
 
 figure();
