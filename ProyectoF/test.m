@@ -8,20 +8,19 @@ a = 0.4; % depende del contraste, la frecuencia espacial, y la orientación de e
 img_contrast = a * img_gray + (1/2) - (a/2);
 [filas, columnas]=size(img_contrast);
 
-figure(2);
-hold on;
+figure();
 subplot(1,2,1);
 imshow(img_gray);
 title('Imagen en escala de grises');
 subplot(1,2,2);
 imshow(img_contrast);
 title('Imagen con contraste reducido');
-hold off;
 
 indice = 1;
 frames = 30;
-figure(3);
 hold on;
+
+figure;
 while indice <= frames
     for y=1:filas
         for x=1:columnas
